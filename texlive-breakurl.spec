@@ -1,12 +1,12 @@
-# revision 15878
+# revision 29901
 # category Package
 # catalog-ctan /macros/latex/contrib/breakurl
-# catalog-date 2009-09-27 09:44:19 +0200
+# catalog-date 2013-04-12 10:31:24 +0200
 # catalog-license lppl
-# catalog-version 1.30
+# catalog-version 1.40
 Name:		texlive-breakurl
-Version:	1.30
-Release:	2
+Version:	1.40
+Release:	1
 Summary:	Line-breakable \url-like links in hyperref when compiling via dvips/ps2pdf
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/breakurl
@@ -53,18 +53,3 @@ the generated links.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Tue Jan 03 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.30-2
-+ Revision: 749888
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.30-1
-+ Revision: 717985
-- texlive-breakurl
-- texlive-breakurl
-- texlive-breakurl
-- texlive-breakurl
-- texlive-breakurl
-
