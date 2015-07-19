@@ -6,7 +6,7 @@
 # catalog-version 1.40
 Name:		texlive-breakurl
 Version:	1.40
-Release:	8
+Release:	9
 Summary:	Line-breakable \url-like links in hyperref when compiling via dvips/ps2pdf
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/breakurl
