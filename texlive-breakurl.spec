@@ -1,19 +1,13 @@
-# revision 29901
-# category Package
-# catalog-ctan /macros/latex/contrib/breakurl
-# catalog-date 2013-04-12 10:31:24 +0200
-# catalog-license lppl
-# catalog-version 1.40
 Name:		texlive-breakurl
-Version:	1.40
-Release:	10
+Version:	29901
+Release:	1
 Summary:	Line-breakable \url-like links in hyperref when compiling via dvips/ps2pdf
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/breakurl
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/breakurl.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/breakurl.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/breakurl.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/breakurl.r29901.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/breakurl.doc.r29901.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/breakurl.source.r29901.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -28,12 +22,12 @@ in one atomic piece. This package allows such line breaks in
 the generated links.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -46,7 +40,8 @@ the generated links.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
