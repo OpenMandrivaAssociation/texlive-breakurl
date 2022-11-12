@@ -5,9 +5,9 @@ Summary:	Line-breakable \url-like links in hyperref when compiling via dvips/ps2
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/breakurl
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/breakurl.r29901.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/breakurl.doc.r29901.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/breakurl.source.r29901.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/breakurl.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/breakurl.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/breakurl.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
