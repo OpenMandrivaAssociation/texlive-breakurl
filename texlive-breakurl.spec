@@ -1,6 +1,6 @@
 Name:		texlive-breakurl
-Version:	29901
-Release:	2
+Version:	77677
+Release:	1
 Summary:	Line-breakable \url-like links in hyperref when compiling via dvips/ps2pdf
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/breakurl
