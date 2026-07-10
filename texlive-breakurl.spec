@@ -1,50 +1,27 @@
-Name:		texlive-breakurl
-Version:	77677
-Release:	1
+%global tl_name breakurl
+%global tl_revision 79618
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.40
+Release:	%{tl_revision}.1
 Summary:	Line-breakable \url-like links in hyperref when compiling via dvips/ps2pdf
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/breakurl
-License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/breakurl.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/breakurl.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/breakurl.source.r%{version}.tar.xz
+License:	lppl1.2
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/breakurl.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/breakurl.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/breakurl.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package provides a command much like hyperref's \url that
-typesets a URL using a typewriter-like font. However, if the
-dvips driver is being used, the original \url doesn't allow
-line breaks in the middle of the created link: the link comes
-in one atomic piece. This package allows such line breaks in
-the generated links.
+This package provides a command much like hyperref's \url that typesets
+a URL using a typewriter-like font. However, if the dvips driver is
+being used, the original \url doesn't allow line breaks in the middle of
+the created link: the link comes in one atomic piece. This package
+allows such line breaks in the generated links.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/breakurl/breakurl.sty
-%doc %{_texmfdistdir}/doc/latex/breakurl/README
-%doc %{_texmfdistdir}/doc/latex/breakurl/breakurl.pdf
-#- source
-%doc %{_texmfdistdir}/source/latex/breakurl/breakurl.dtx
-%doc %{_texmfdistdir}/source/latex/breakurl/breakurl.ins
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
